@@ -17,6 +17,7 @@ import lombok.ToString;
 @ToString
 public class Order {
     @Id
+
     @Column(name="tiresale_id")
     private Integer tireSaleId;
     @Column(name="amount")

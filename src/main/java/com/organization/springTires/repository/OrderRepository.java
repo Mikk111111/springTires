@@ -1,4 +1,16 @@
 package com.organization.springTires.repository;
 
-public interface OrderRepository {
+import com.organization.springTires.model.Order;
+import org.springframework.data.jpa.repository.Query;
+import org.springframework.data.repository.CrudRepository;
+
+import java.util.List;
+import java.util.Optional;
+
+public interface OrderRepository extends CrudRepository<Order,Integer> {
+    @Query(value ="SELECT * FROM orders ORDER BY amount ASC")
+    List<Order> getOrderAmountASC(String amount);
+    @Query(value ="SELECT * FROM orders ORDER BY amount DESC")
+    List<Order> getOrderAmountDESC(String amount);
+    Optional<Order> findByOrderId(int id);
 }

@@ -4,17 +4,15 @@ import com.organization.springTires.model.Warehouse;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.data.repository.query.Param;
-
-import java.beans.Customizer;
 import java.util.List;
-import java.util.Optional;
+
 
 public interface WarehouseRepository extends CrudRepository<Warehouse,Integer> {
     //Optional<Warehouse> findByWarehouseTireName(String tireName);
     //Optional<Warehouse> findByWarehouseManufacturer(String manufacturer);
     //Optional<Warehouse> findByWarehouseModel(String model);
-    Optional<Warehouse> findByWarehousePrice(double price);
-    Optional<Warehouse> findByWarehouseAmount(int amount);
+    //Optional<Warehouse> findByWarehousePrice(double price);
+    //Optional<Warehouse> findByWarehouseAmount(int amount);
 
     @Query(value ="SELECT * FROM warehouse WHERE tirename LIKE :name",nativeQuery = true)
     List<Warehouse> getWarehouseTireNameLike(@Param("name") String tireName);
@@ -24,7 +22,9 @@ public interface WarehouseRepository extends CrudRepository<Warehouse,Integer> {
     List<Warehouse> getWarehouseModelLike(@Param("model") String model);
     @Query(value ="SELECT * FROM warehouse ORDER BY price ASC")
     List<Warehouse> getWarehousePriceASC(String price);
-    @Query(value ="SELECT * FROM warehouse ORDER BY amount DESC")
+    @Query(value ="SELECT * FROM warehouse ORDER BY price DESC")
+    List<Warehouse> getWarehousePriceDESC(String price);
+    @Query(value ="SELECT * FROM warehouse ORDER BY amount ASC")
     List<Warehouse> getWarehouseAmountASC(String amount);
     @Query(value ="SELECT * FROM warehouse ORDER BY amount DESC")
     List<Warehouse> getWarehouseAmountDESC(String amount);

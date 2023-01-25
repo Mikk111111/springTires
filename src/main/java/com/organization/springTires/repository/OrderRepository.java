@@ -9,8 +9,8 @@ import java.util.Optional;
 
 public interface OrderRepository extends CrudRepository<Order,Integer> {
     @Query(value ="SELECT * FROM orders ORDER BY amount ASC")
-    List<Order> getOrderAmountASC(String amount);
+    List<Order> getOrderAmountASC();
     @Query(value ="SELECT * FROM orders ORDER BY amount DESC")
-    List<Order> getOrderAmountDESC(String amount);
+    List<Order> getOrderAmountDESC();
     Optional<Order> findByOrderId(int id);
 }

@@ -21,12 +21,12 @@ public interface WarehouseRepository extends CrudRepository<Warehouse,Integer> {
     @Query(value ="SELECT * FROM warehouse WHERE model LIKE :model",nativeQuery = true)
     List<Warehouse> getWarehouseModelLike(@Param("model") String model);
     @Query(value ="SELECT * FROM warehouse ORDER BY price ASC")
-    List<Warehouse> getWarehousePriceASC(String price);
+    List<Warehouse> getWarehousePriceASC();
     @Query(value ="SELECT * FROM warehouse ORDER BY price DESC")
-    List<Warehouse> getWarehousePriceDESC(String price);
+    List<Warehouse> getWarehousePriceDESC();
     @Query(value ="SELECT * FROM warehouse ORDER BY amount ASC")
-    List<Warehouse> getWarehouseAmountASC(String amount);
+    List<Warehouse> getWarehouseAmountASC();
     @Query(value ="SELECT * FROM warehouse ORDER BY amount DESC")
-    List<Warehouse> getWarehouseAmountDESC(String amount);
+    List<Warehouse> getWarehouseAmountDESC();
 
 }

@@ -19,6 +19,10 @@ public class Warehouse {
     @Column(name="warehouse_id")
     private Integer warehouseId;
 
+    @ManyToOne
+    @JoinColumn(name="tires_id", nullable=false)
+    private Tire tire;
+
     @Column(name="tirename")
     private String tireName;
 
@@ -28,18 +32,14 @@ public class Warehouse {
     @Column(name="model")
     private String model;
 
-//    @OneToOne(cascade = CascadeType.ALL)
-//    @JoinColumn(name = "model",referencedColumnName = "model")
-//    private String model;
-//    @OneToOne(mappedBy = "warehouse",cascade = CascadeType.ALL)
-//    @PrimaryKeyJoinColumn
-//    private Tire tire;
     @Column(name="price")
     private double price;
+
     @Column(name="amount")
     private Integer amount;
 
-    public Warehouse(String tireName, String manufacturer, String model, double price, Integer amount) {
+    public Warehouse(Tire tire, String tireName, String manufacturer, String model, double price, Integer amount) {
+        this.tire = tire;
         this.tireName = tireName;
         this.manufacturer = manufacturer;
         this.model = model;

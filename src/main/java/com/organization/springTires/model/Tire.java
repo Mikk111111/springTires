@@ -5,6 +5,8 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 import lombok.ToString;
 
+import java.util.List;
+
 @Entity
 @Table(name = "tires")
 @Getter
@@ -12,20 +14,18 @@ import lombok.ToString;
 @NoArgsConstructor
 @ToString
 public class Tire {
-//    @Id
-//    @Column(name = "model")
-//    @OneToOne
-//    @MapsId
-//    @JoinColumn(name = "model")
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "tires_id")
-//    private Warehouse warehouse;
     private Integer tireId;
 
     @Column(name="modelspecs")
     private String modelSpecs;
+
+    @ToString.Exclude
+    @OneToMany(mappedBy="tire", fetch = FetchType.EAGER)
+    private List<Warehouse> warehouses;
 
     public Tire(String modelSpecs) {
         this.modelSpecs = modelSpecs;

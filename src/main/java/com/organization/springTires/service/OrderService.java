@@ -12,13 +12,17 @@ public class OrderService {
     @Autowired
     private OrderRepository orderRepository;
 
+    public List<Order> getOrderAll(){
+        return (List<Order>) orderRepository.findAll();
+    }
+
     public Order getOrderById(int id){
         return orderRepository.findByOrderId(id).get();
     }
-    public List<Order> getOrderAmountASC(){
+    public List<Order> getOrderByAmountASC(){
         return orderRepository.getOrderAmountASC();
     }
-    public List<Order> getOrderAmountDESC(){
+    public List<Order> getOrderByAmountDESC(){
         return orderRepository.getOrderAmountDESC();
     }
 

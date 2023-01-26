@@ -11,16 +11,19 @@ import java.util.List;
 public class WarehouseService {
     @Autowired
     private WarehouseRepository warehouseRepository;
+    public List<Warehouse> getWarehouseAll(){
+        return (List<Warehouse>) warehouseRepository.findAll();
+    }
     public Warehouse getWarehouseByID(Integer id){
         return warehouseRepository.findById(id).get();
     }
-    public List<Warehouse> getWarehouseByTireNameLike(String tireName){
+    public Warehouse getWarehouseByTireNameLike(String tireName){
         return warehouseRepository.getWarehouseTireNameLike(tireName);
     }
-    public List<Warehouse> getWarehouseByManufacturerLike(String manufacturer){
+    public Warehouse getWarehouseByManufacturerLike(String manufacturer){
         return warehouseRepository.getWarehouseManufacturerLike(manufacturer);
     }
-    public List<Warehouse> getWarehouseModelLike(String model){
+    public Warehouse getWarehouseByModelLike(String model){
         return warehouseRepository.getWarehouseModelLike(model);
     }
     public List<Warehouse> getWarehouseByPriceASC(){

@@ -20,16 +20,16 @@ public class OrderController {
     public @ResponseBody List<Order> getOrderAll(){
         return orderService.getOrderAll();
     }
-    @GetMapping(path=("/All/{id}"))
-    public @ResponseBody Order getOrderId(@PathVariable Integer id){
-        return orderService.getOrderById(id);
-    }
-    @GetMapping(path = "/Amount/ASC")
-    public @ResponseBody List<Order> getOrderAmountASC(){
-        return orderService.getOrderByAmountASC();
-    }
-    @GetMapping(path = "/Amount/DESC")
-    public @ResponseBody List<Order> getOrderAmountDESC(){
-        return orderService.getOrderByAmountDESC();
-    }
+//    @GetMapping(path=("/All/{id}"))
+//    public @ResponseBody Order getOrderId(@PathVariable Integer id){
+//        return orderService.getOrderById(id);
+//    }
+//    @GetMapping(path = "/Amount/ASC")
+//    public @ResponseBody List<Order> getOrderAmountASC(){
+//        return orderService.getOrderByAmountASC();
+//    }
+//    @GetMapping(path = "/Amount/DESC")
+//    public @ResponseBody List<Order> getOrderAmountDESC(){
+//        return orderService.getOrderByAmountDESC();
+//    }
 }

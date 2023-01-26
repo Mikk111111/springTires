@@ -12,10 +12,10 @@ public class TireService {
 
     @Autowired
     private TireRepository tireRepository;
-    public List<Tire> getTireByModelLike(String model){
-        return tireRepository.getTireModelLike(model);
-    }
-    public List<Tire> getTireBySpecsLike(String specs){
-        return tireRepository.getTireSpecsLike(specs);
-    }
+//    public List<Tire> getTireByModelLike(String model){
+//        return tireRepository.getTireModelLike(model);
+//    }
+//    public List<Tire> getTireBySpecsLike(String specs){
+//        return tireRepository.getTireSpecsLike(specs);
+//    }
 }

@@ -13,12 +13,15 @@ import lombok.ToString;
 @NoArgsConstructor
 @ToString
 public class Warehouse {
+
     @Id
-    @Column(name="id")
-    private Integer id;
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    @Column(name="warehouse_id")
+    private Integer warehouseId;
 
     @Column(name="tirename")
     private String tireName;
+
     @Column(name="manufacturer")
     private String manufacturer;
 
@@ -35,4 +38,12 @@ public class Warehouse {
     private double price;
     @Column(name="amount")
     private Integer amount;
+
+    public Warehouse(String tireName, String manufacturer, String model, double price, Integer amount) {
+        this.tireName = tireName;
+        this.manufacturer = manufacturer;
+        this.model = model;
+        this.price = price;
+        this.amount = amount;
+    }
 }

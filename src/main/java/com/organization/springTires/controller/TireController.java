@@ -16,9 +16,9 @@ public class TireController {
     @Autowired
     private TireService tireService;
 
-    @GetMapping(path = "/Specs/{specs]")
-    public List<Tire> getTireSpecsLike(@PathVariable String specs){
-        return tireService.getTireBySpecsLike(specs);
-    }
+//    @GetMapping(path = "/Specs/{specs]")
+//    public List<Tire> getTireSpecsLike(@PathVariable String specs){
+//        return tireService.getTireBySpecsLike(specs);
+//    }
 
 }

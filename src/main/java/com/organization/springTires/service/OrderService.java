@@ -16,14 +16,14 @@ public class OrderService {
         return (List<Order>) orderRepository.findAll();
     }
 
-    public Order getOrderById(int id){
-        return orderRepository.findByOrderId(id).get();
-    }
-    public List<Order> getOrderByAmountASC(){
-        return orderRepository.getOrderAmountASC();
-    }
-    public List<Order> getOrderByAmountDESC(){
-        return orderRepository.getOrderAmountDESC();
-    }
+//    public Order getOrderById(int id){
+//        return orderRepository.findByOrderId(id).get();
+//    }
+//    public List<Order> getOrderByAmountASC(){
+//        return orderRepository.getOrderAmountASC();
+//    }
+//    public List<Order> getOrderByAmountDESC(){
+//        return orderRepository.getOrderAmountDESC();
+//    }
 
 }

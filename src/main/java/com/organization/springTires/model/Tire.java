@@ -12,12 +12,22 @@ import lombok.ToString;
 @NoArgsConstructor
 @ToString
 public class Tire {
-    @Id
-    @Column(name = "model")
+//    @Id
+//    @Column(name = "model")
 //    @OneToOne
 //    @MapsId
 //    @JoinColumn(name = "model")
-    private Warehouse warehouse;
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    @Column(name = "tires_id")
+//    private Warehouse warehouse;
+    private Integer tireId;
+
     @Column(name="modelspecs")
     private String modelSpecs;
+
+    public Tire(String modelSpecs) {
+        this.modelSpecs = modelSpecs;
+    }
 }

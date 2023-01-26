@@ -8,10 +8,7 @@ import lombok.ToString;
 
 @Entity
 @Table(name = "warehouse")
-@Getter
-@Setter
-@NoArgsConstructor
-@ToString
+@Getter @Setter @NoArgsConstructor @ToString
 public class Warehouse {
 
     @Id
@@ -33,8 +30,7 @@ public class Warehouse {
     private String model;
 
     @Column(name="price")
-    private double price;
-
+    private Double price;
     @Column(name="amount")
     private Integer amount;
 

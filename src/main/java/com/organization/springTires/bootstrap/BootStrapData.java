@@ -29,7 +29,7 @@ public class BootStrapData implements CommandLineRunner {
 
     @Override
     public void run(String... args) throws Exception {
-
+        System.out.println("Running...");
 
         System.out.println("\n**********************************\n");
 

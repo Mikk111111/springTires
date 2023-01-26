@@ -13,11 +13,6 @@ import lombok.ToString;
 @NoArgsConstructor
 @ToString
 public class Order {
-
-//    @Id
-//    @Column(name="tiresale_id")
-//    private Integer tireSaleId;
-
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name="order_id")

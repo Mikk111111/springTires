@@ -17,7 +17,7 @@ public class Tire {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    @Column(name = "tires_id")
+    @Column(name = "model_id")
     private Integer tireId;
 
     @Column(name="modelspecs")

@@ -1,8 +1,5 @@
 package com.organization.springTires.model;
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -16,8 +13,11 @@ import lombok.ToString;
 @ToString
 public class Tire {
     @Id
-    @Column(name="model")
-    private String model;
+    @Column(name = "model")
+//    @OneToOne
+//    @MapsId
+//    @JoinColumn(name = "model")
+    private Warehouse warehouse;
     @Column(name="modelspecs")
     private String modelSpecs;
 }

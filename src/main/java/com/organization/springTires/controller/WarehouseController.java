@@ -21,6 +21,7 @@ public class WarehouseController {
     public @ResponseBody List<Warehouse> getWarehouseAll(){
         return warehouseService.getWarehouseAll();
     }
+    //http://localhost:8080/Warehouse/All
     @GetMapping(path=("/All/{id}"))
     public @ResponseBody Warehouse getWarehouseId(@PathVariable Integer id){
         return warehouseService.getWarehouseByID(id);

@@ -13,11 +13,11 @@ public class Warehouse {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    @Column(name="warehouse_id")
-    private Integer warehouseId;
+    @Column(name="main_id")
+    private Integer mainId;
 
     @ManyToOne
-    @JoinColumn(name="tires_id", nullable=false)
+    @JoinColumn(name="tire_id", nullable=false)
     private Tire tire;
 
     @Column(name="tirename")
@@ -26,19 +26,15 @@ public class Warehouse {
     @Column(name="manufacturer")
     private String manufacturer;
 
-    @Column(name="model")
-    private String model;
-
     @Column(name="price")
     private Double price;
     @Column(name="amount")
     private Integer amount;
 
-    public Warehouse(Tire tire, String tireName, String manufacturer, String model, double price, Integer amount) {
+    public Warehouse(Tire tire, String tireName, String manufacturer, Double price, Integer amount) {
         this.tire = tire;
         this.tireName = tireName;
         this.manufacturer = manufacturer;
-        this.model = model;
         this.price = price;
         this.amount = amount;
     }

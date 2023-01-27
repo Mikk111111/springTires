@@ -50,8 +50,8 @@ public class BootStrapData implements CommandLineRunner {
             tireRepository.findAll().iterator().next();
 
         }catch (NoSuchElementException e){
-            Tire tire01 = new Tire("tire model 101");
-            Tire tire02 = new Tire("tire model 202");
+            Tire tire01 = new Tire(1,"tire model 101");
+            Tire tire02 = new Tire(2,"tire model 202");
             tireRepository.saveAll(Arrays.asList(tire01, tire02));
         }
 
@@ -72,7 +72,6 @@ public class BootStrapData implements CommandLineRunner {
                                 tire,
                                 "tire_name_" + count,
                                 "manufacture_" + count,
-                                "model_"+ count,
                                 ((Math.random() * (100.00 - 10.00)) + 10.00),
                                 (int)((Math.random() * (100.00 - 10.00)) + 10.00)
                         );

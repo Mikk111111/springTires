@@ -17,25 +17,11 @@ public class WarehouseService {
     public Warehouse getWarehouseByID(Integer id){
         return warehouseRepository.findById(id).get();
     }
-//    public Warehouse getWarehouseByTireNameLike(String tireName){
-//        return warehouseRepository.getWarehouseTireNameLike(tireName);
-//    }
-//    public Warehouse getWarehouseByManufacturerLike(String manufacturer){
-//        return warehouseRepository.getWarehouseManufacturerLike(manufacturer);
-//    }
-//    public Warehouse getWarehouseByModelLike(String model){
-//        return warehouseRepository.getWarehouseModelLike(model);
-//    }
-//    public List<Warehouse> getWarehouseByPriceASC(){
-//        return warehouseRepository.getWarehousePriceASC();
-//    }
-//    public List<Warehouse> getWarehouseByPriceDESC(){
-//        return warehouseRepository.getWarehousePriceDESC();
-//    }
-//    public List<Warehouse> getWarehouseByAmountASC(){
-//        return warehouseRepository.getWarehouseAmountASC();
-//    }
-//    public List<Warehouse> getWarehouseByAmountDESC(){
-//        return warehouseRepository.getWarehouseAmountDESC();
-//    }
+
+    public List<Warehouse> getWarehouseByTireNameLike(String tireName){
+        return warehouseRepository.getWarehouseTireNameLike(tireName);
+    }
+    public List<Warehouse> getWarehouseByManufacturerLike(String manufacturer){
+        return warehouseRepository.getWarehouseManufacturerLike(manufacturer);
+    }
 }

@@ -1,4 +1,5 @@
 package com.organization.springTires.model;
+
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -18,7 +19,7 @@ public class Tire {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "model_id")
-    private Integer tireId;
+    private Integer model_id;
 
     @Column(name="modelspecs")
     private String modelSpecs;
@@ -27,7 +28,8 @@ public class Tire {
     @OneToMany(mappedBy="tire", fetch = FetchType.EAGER)
     private List<Warehouse> warehouses;
 
-    public Tire(String modelSpecs) {
+    public Tire(Integer model_id,String modelSpecs) {
+        this.model_id = model_id;
         this.modelSpecs = modelSpecs;
     }
 }
